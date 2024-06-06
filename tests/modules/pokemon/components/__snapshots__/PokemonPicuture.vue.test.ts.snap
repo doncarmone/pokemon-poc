@@ -1,0 +1,3 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`PokemonPicture > should render hidden image when showPokemon prop is true 1`] = `"<section data-v-49cc19b7=""><img data-v-49cc19b7="" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png" class="fade-in"></section>"`;

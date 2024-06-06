@@ -1,10 +1,10 @@
 <template>
     <section class="mt-5 flex flex-col">
         <button v-for="{ name, id } in options" :key="id" @click="$emit('selectedOption', id)"
-            :disabled="blockSelection" :class="['capitalize disabled:shadow-noe disabled:bg-gray-100', {
+            :disabled="blockSelection" :class="[{
                 'correct': blockSelection && id === options.find(p => p.id === randomPokemon.id)?.id,
                 'incorrect': blockSelection && id !== options.find(p => p.id === randomPokemon.id)?.id
-            }]">
+            }, 'capitalize disabled:shadow-noe disabled:bg-gray-100']">
             {{ name }}
         </button>
     </section>

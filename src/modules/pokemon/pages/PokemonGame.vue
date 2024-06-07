@@ -1,5 +1,5 @@
 <template>
-    <section v-if="isLoading || randomPokemon.id === null"
+    <section v-if="isLoading || randomPokemon?.id === null"
         class="flex flex-col justify-center items-center w-screen h-screen">
         <h1 class="text-3xl">Espere</h1>
         <h3 class="animate-pulse">Cargando pokemons</h3>
@@ -7,7 +7,8 @@
     <section v-else class="flex flex-col justify-center items-center w-screen h-screen">
         <h1 class="mt-5">Quien es este pokemon?</h1>
         <div class="h-20">
-            <button class="bg-blue-500 text-white px-4 py-2 rounded-lg shadow-md transition-all hover:bg-blue-600"
+            <button data-test-id="btn-new-game"
+                class="bg-blue-500 text-white px-4 py-2 rounded-lg shadow-md transition-all hover:bg-blue-600"
                 v-if="gameStatus !== GameStatus.Playing" @click="getNextRound(4)">Next</button>
         </div>
         <PokemonPicture :pokemon-id="randomPokemon.id" :show-pokemon="gameStatus !== GameStatus.Playing" />

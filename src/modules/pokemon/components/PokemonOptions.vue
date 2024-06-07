@@ -4,7 +4,7 @@
             :disabled="blockSelection" :class="[{
                 'correct': blockSelection && id === options.find(p => p.id === randomPokemon.id)?.id,
                 'incorrect': blockSelection && id !== options.find(p => p.id === randomPokemon.id)?.id
-            }, 'capitalize disabled:shadow-noe disabled:bg-gray-100']">
+            }, 'capitalize disabled:shadow-none disabled:bg-gray-100']">
             {{ name }}
         </button>
     </section>

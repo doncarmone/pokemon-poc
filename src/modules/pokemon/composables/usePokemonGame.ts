@@ -18,7 +18,7 @@ export const usePokemonGame = () => {
     });
 
     const getPokemons = async (): Promise<Pokemon[]> => {
-        const response = await pokemonApi.get<PokemonListResponse>('/pokemon?limit=151 ');
+        const response = await pokemonApi.get<PokemonListResponse>('/?limit=151');
 
         const pokemonsArray = response.data.results.map((pokemon) => {
             const urlParts = pokemon.url.split('/');
@@ -56,9 +56,7 @@ export const usePokemonGame = () => {
     };
 
     onMounted(async () => {
-        console.log('onMounted')
         pokemons.value = await getPokemons();
-        console.log(pokemons.value)
         getNextRound();
     });
 
